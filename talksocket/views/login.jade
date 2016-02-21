@@ -1,0 +1,22 @@
+extends layout
+block content
+    #login-wrap
+        .panel.panel-primary
+            .panel-heading
+                .panel-title TalkSocket
+            .panel-body
+                form.form-horizontal
+                    .fieldset
+                        legend 
+                            h3 Login
+                        .form-group
+                            .col-lg-10
+                                input#inputEmail.form-control(type='text', placeholder='Email')
+                        .form-group
+                            .col-lg-10
+                                input#inputPassword.form-control(type='password', placeholder='Password')
+                        .form-group
+                            .col-lg-offset-2
+                                button.btn.btn-primary(type='submit') Submit
+                                .divider
+                                button.btn.btn-default(type='reset') Reset
