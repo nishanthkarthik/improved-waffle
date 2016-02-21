@@ -1,6 +1,11 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url('/images/abstract_bg.svg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 }
 
 a {
@@ -16,4 +21,8 @@ a {
     width:10px;
     height:auto;
     display:inline-block;
+}
+
+#bg-image {
+    background-size:cover
 }
