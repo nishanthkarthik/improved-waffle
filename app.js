@@ -1,10 +1,11 @@
-var _port = 8000;
+/* global process */
+var _port = process.env.PORT | 8000;
 
 var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-    res.send('index.html');
+    res.send('login.html');
 });
 
 app.listen(_port, function () {
