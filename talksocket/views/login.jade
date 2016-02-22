@@ -8,15 +8,15 @@ block content
                 form.form-horizontal
                     .fieldset
                         legend 
-                            h3 Login
+                            h3 Use this key
+                            .divider
+                            input.form-control(type="text", placeholder="Generated Key", class="genKey")
                         .form-group
                             .col-lg-10
-                                input#inputEmail.form-control(type='text', placeholder='Email')
-                        .form-group
-                            .col-lg-10
-                                input#inputPassword.form-control(type='password', placeholder='Password')
+                                h3 or enter a key
+                                input.form-control(type='text', placeholder='Your friend\'s key')
                         .form-group
                             .col-lg-10
                                 button.btn.btn-primary(type='submit') Submit
                                 .divider
-                                button.btn.btn-default(type='reset') Reset
+                                button.btn.btn-default(type='reset') Regenerate
