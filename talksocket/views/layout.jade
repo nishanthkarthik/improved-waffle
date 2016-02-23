@@ -2,8 +2,9 @@ doctype html
 html
   head
     title= title
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js')
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    //link(rel='stylesheet', href='/stylesheets/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    block aux_head
   body
     block content

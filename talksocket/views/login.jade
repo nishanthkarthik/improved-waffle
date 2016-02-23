@@ -1,4 +1,19 @@
 extends layout
+
+block aux_head
+    script(type='text/javascript').
+        var $ = jQuery;
+        $(document).ready(function(){
+            $.get("/keygen", function(data){
+                $(".genKey").val(data);
+            }); 
+            $(".genKey").click(function(){
+                $.get("/keygen", function(data){
+                    $(".genKey").val(data);
+                }); 
+            });
+        });
+
 block content
     #login-wrap
         .panel.panel-primary
@@ -9,8 +24,7 @@ block content
                     .fieldset
                         legend 
                             h3 Use this key
-                            .divider
-                            input.form-control(type="text", placeholder="Generated Key", class="genKey")
+                            input.form-control(type="text", disabled='' placeholder="Generated Key", class="genKey")
                         .form-group
                             .col-lg-10
                                 h3 or enter a key
@@ -19,4 +33,4 @@ block content
                             .col-lg-10
                                 button.btn.btn-primary(type='submit') Submit
                                 .divider
-                                button.btn.btn-default(type='reset') Regenerate
+                                button.btn.btn-default Regenerate
