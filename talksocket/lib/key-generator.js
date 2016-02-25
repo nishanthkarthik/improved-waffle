@@ -17,11 +17,11 @@ db.once('open', function(){
 	};
 
 	var findKey = function(_newKey){
-		keymodel.find({name: _newKey, function(err, oldKey){
+		keymodel.find({name: _newKey, function(err, dbresult){
 			if (err) return err;
-			if (_newKey == oldKey)
-				return true;
-			return false;
+			if (!dbresult)
+				return false;
+			return true;
 		}});
 	};
 

@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "talkSocket",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,9 +11,11 @@
     "debug": "~0.7.4",
     "express": "~4.0.0",
     "jade": "~1.3.0",
+    "lodash": "^4.5.1",
     "mongoose": "^4.4.4",
     "morgan": "~1.0.0",
     "sillyname": "^0.1.0",
+    "socket.io": "^1.4.5",
     "static-favicon": "~1.0.0"
   }
 }

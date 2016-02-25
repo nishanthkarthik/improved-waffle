@@ -13,6 +13,16 @@ block aux_head
                 }); 
             });
         });
+        var attemptLogin = function(){
+                var postdata = {
+                    "ownkey": $(".genKey").val(),
+                    "remotekey": $(".remoteKey").val()
+                };
+                //alert(JSON.stringify(postdata));
+                $.post('/user', postdata, function(data){
+                    alert(JSON.stringify(data));
+                });
+        };
 
 block content
     #login-wrap
@@ -28,9 +38,9 @@ block content
                         .form-group
                             .col-lg-10
                                 h3 or enter a key
-                                input.form-control(type='text', placeholder='Your friend\'s key')
+                                input.form-control(type='text', placeholder='Your friend\'s key', class="remoteKey")
                         .form-group
                             .col-lg-10
-                                button.btn.btn-primary(type='submit') Submit
+                                button.btn.btn-primary(class='postLogin',onclick='attemptLogin()') Login
                                 .divider
                                 button.btn.btn-default Regenerate
