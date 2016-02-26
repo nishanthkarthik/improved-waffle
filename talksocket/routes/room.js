@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-    res.render('home', { title: 'Your chatroom' });
+    res.render('room', { title: 'talkSocket Chatroom' });
 });
 
 module.exports = router;

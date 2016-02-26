@@ -1,0 +1,61 @@
+extends layout
+
+block aux_head
+    script(type='text/javascript').
+        var $ = jQuery;
+        $(document).ready(getName);
+
+        function getName(){
+            alert('enter name');
+        }
+
+block content
+
+    .panel.panel-default
+        .panel-heading
+            ul.nav.nav-pills
+                li.active
+                    button.btn.btn-default Home
+                li.active
+                    .divider
+                li.active
+                   button.btn.btn-primary(onclick='deleteRoom(); return false;') Delete chatroom
+        .panel-body
+            Panel
+                ul.list-group
+                    li.list-group-item
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
+                    li.list-group-item    
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                        small John smith 
