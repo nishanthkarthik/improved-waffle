@@ -1,10 +1,10 @@
-
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -12,7 +12,9 @@ var login = require('./routes/login');
 var keygen = require('./routes/keygen');
 var room = require('./routes/room');
 
+// init
 var app = express();
+mongoose.connect('mongodb://katichphoton:09d6cf2904dc3a19d9342120de49c215674fc426@ds013918.mongolab.com:13918/random-name');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
