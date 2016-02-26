@@ -20,15 +20,15 @@ var addKey = function(_key) {
 
 function findKey(_newKey, callback) {
 	var _keymodel = mongoose.model('keys', key_model.keySchema);
-	_keymodel.count({
+	_keymodel.find({
 		name: _newKey
 	}, function(err, dbresult) {
 		if (err)
-			callback(err, false);
-		if (dbresult > 0)
-			callback(false, true);
+			callback(err, false, {});
+		if (dbresult.length > 0)
+			callback(false, true, dbresult);
 		else
-			callback(false, false);
+			callback(false, false, dbresult);
 	});
 };
 

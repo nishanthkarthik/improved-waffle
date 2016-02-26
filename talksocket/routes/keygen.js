@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
 	var newKey = sillyname().replace(/\s/g, "-").toLowerCase();
 	newKey += '-' + Math.floor(100 + Math.random() * 900);
 
-	key_generator.findKey(newKey, function(err, dbresult) {
+	key_generator.findKey(newKey, function(err, dbresult, content) {
 		if (dbresult == 0) {
 			key_generator.addKey(newKey);
 			console.log('new key generated > ' + newKey);
