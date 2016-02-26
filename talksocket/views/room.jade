@@ -1,16 +1,16 @@
 extends layout
 
 block aux_head
+    link(rel='stylesheet', href='/stylesheets/chat-style.css')
     script(type='text/javascript').
         var $ = jQuery;
-        $(document).ready(getName);
+        //$(document).ready(getName);
 
         function getName(){
             alert('enter name');
         }
 
 block content
-
     .panel.panel-default
         .panel-heading
             ul.nav.nav-pills
@@ -20,42 +20,66 @@ block content
                     .divider
                 li.active
                    button.btn.btn-primary(onclick='deleteRoom(); return false;') Delete chatroom
-        .panel-body
-            Panel
-                ul.list-group
-                    li.list-group-item
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
-                    li.list-group-item    
-                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                        small John smith 
+        .panel-body.custom-panel-body
+            section.module
+                ol.discussion
+                    li.self-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+                    li.other-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+                    li.self-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+                    li.self-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+                    li.other-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+                    li.self-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+                    li.self-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+                    li.other-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+                    li.self-msg
+                        .arrow
+                        .message
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                            .sender
+                                p John smith
+        .form-group
+            .input-group.input-bg
+                input.form-control(type='text')
+                span.input-group-btn
+                    button.btn.btn-default(type='button') Send
+      
