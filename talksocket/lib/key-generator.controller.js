@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 var key_model = require('./key-generator.model.js')
-
-var util = require('util');
+var crypto = require('crypto-extra')
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error: '));
@@ -10,7 +9,8 @@ var keymodel = mongoose.model('keys', key_model.keySchema);
 
 var addKey = function(_key) {
 	var userKey = new keymodel({
-		name: _key
+		name: _key,
+		token: crypto.random()
 	});
 	userKey.save(function(err, userKey) {
 		if (err) return console.error(err);
@@ -23,7 +23,7 @@ function findKey(_newKey, callback) {
 	_keymodel.count({
 		name: _newKey
 	}, function(err, dbresult) {
-		if (err) 
+		if (err)
 			callback(err, false);
 		if (dbresult > 0)
 			callback(false, true);
