@@ -11,38 +11,39 @@ var lodash = require('lodash');
 router.post('/', function(req, res) {
 	console.dir(req.body);
 	if (lodash.has(req.body, 'remotekey') && req.body.remotekey) {
-		console.log('remotekey auth');
 
-		key_generator.findKey(req.body.remotekey, function(result) {
-			if (result)
+		console.log('remotekey auth');
+		key_generator.findKey(req.body.remotekey, function(err, result) {
+			if (err)
+				res.end(JSON.stringify({
+					redirect: '/login?error'
+				}));
+			else if (result)
 				res.end(JSON.stringify({
 					redirect: '/room?key=' + req.body.remotekey
 				}));
-			res.end(JSON.stringify({
-				redirect: '/login' + req.body.remotekey
-			}));
+			else
+				res.end(JSON.stringify({
+					redirect: '/login?error=' + req.body.remotekey
+				}));
 		});
+
 	} else if (lodash.has(req.body, 'ownkey') && req.body.ownkey) {
 		console.log('ownkey auth');
-		key_generator.keymodel.count({
-			name: req.body.ownkey
-		}, function(err, dbresult) {
-			if (err) return err;
-			if (dbresult > 0)
+		key_generator.findKey(req.body.ownkey, function(err, result) {
+			if (err)
+				res.end(JSON.stringify({
+					redirect: '/login?error'
+				}));
+			else if (result)
 				res.end(JSON.stringify({
 					redirect: '/room?key=' + req.body.ownkey
 				}));
 			else
 				res.end(JSON.stringify({
-					redirect: '/login?key=' + req.body.ownkey
+					redirect: '/login?error=' + req.body.ownkey
 				}));
-			console.log('called back');
 		});
-	} else {
-		res.end(JSON.stringify({
-			error: 'room not found'
-		}));
-		console.log('response complete');
 	}
 });
 

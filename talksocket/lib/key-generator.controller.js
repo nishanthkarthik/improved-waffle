@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var key_model = require('./key-generator/model.js')
+var key_model = require('./key-generator.model.js')
 
 var util = require('util');
 
@@ -18,7 +18,7 @@ var addKey = function(_key) {
 	});
 };
 
-var findKey = function(_newKey, callback) {
+function findKey(_newKey, callback) {
 	var _keymodel = mongoose.model('keys', key_model.keySchema);
 	_keymodel.count({
 		name: _newKey
@@ -26,9 +26,9 @@ var findKey = function(_newKey, callback) {
 		if (err) 
 			callback(err, false);
 		if (dbresult > 0)
-			callback(err, true);
+			callback(false, true);
 		else
-			callback(err, false);
+			callback(false, false);
 	});
 };
 
